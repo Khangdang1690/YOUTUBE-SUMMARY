@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Summarizer</title>
+</head>
+<body>
+    <h1>YouTube Summarizer</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate Summary</button>
+    </form>
+    {% if summary %}
+        <h2>Summary</h2>
+        <p>{{ summary }}</p>
+    {% endif %}
+</body>
+</html>
